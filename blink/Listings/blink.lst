@@ -1,28 +1,41 @@
-C51 COMPILER V9.60.0.0   BLINK                                                             02/23/2020 19:18:16 PAGE 1   
+C51 COMPILER V9.60.0.0   BLINK                                                             02/24/2020 16:43:40 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE BLINK
 OBJECT MODULE PLACED IN .\Objects\blink.obj
-COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE blink.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\blink.
-                    -lst) TABS(2) OBJECT(.\Objects\blink.obj)
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE blink.c OPTIMIZE(8,SPEED) BROWSE MODP2 DEBUG OBJECTEXTEND PRINT(.\Listings\
+                    -blink.lst) TABS(2) OBJECT(.\Objects\blink.obj)
 
 line level    source
 
    1          #include <reg52.h>
    2          
-   3          sbit p0^1 LED;
-*** ERROR C141 IN LINE 3 OF blink.c: syntax error near '^', expected '='
-*** ERROR C141 IN LINE 3 OF blink.c: syntax error near 'LED', expected ';'
+   3          sbit LED=P0^0;
    4          
-   5          void main()
+   5          void delay()
    6          {
-   7   1          int a=0;
-   8   1          LED=0;
-   9   1          while(true){
-*** ERROR C202 IN LINE 9 OF blink.c: 'true': undefined identifier
-  10   2              for (;a<1000;a++);
-  11   2              LED=-LED;
-  12   2          }
-  13   1      }
+   7   1      }
+   8          
+   9          void main()
+  10          {
+  11   1          int a=0;
+  12   1          LED=0;
+  13   1          //while(1){
+  14   1             //for (;a<1000;a++);
+  15   1              //LED=-LED;
+  16   1          //}
+  17   1      }
 
-C51 COMPILATION COMPLETE.  0 WARNING(S),  3 ERROR(S)
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =      9    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
